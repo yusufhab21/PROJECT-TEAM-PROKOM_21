@@ -15,7 +15,7 @@ def loginAkun():
 
     ##################################
 
-    img = (Image.open("D:\Project Prokom\imgsrc\kaicnth.png"))
+    img = (Image.open("F:\jjaltok\logo-kereta-api-indonesia-kai.jpg"))
     img_resize = img.resize((440,230), Image.ANTIALIAS)
     new_image2 = ImageTk.PhotoImage(img_resize)
     Label(login, image=new_image2, bg="white").place(x=35, y=127)
@@ -35,7 +35,7 @@ def loginAkun():
     ##################################
 
     def cekAkun():
-        with open('D:/Project Prokom/data.akun.k21.json', 'r') as file:
+        with open('f:/jjaltok/data.akun.k21.json', 'r') as file:
             data_akun = json.load(file)
         Username = str(user.get())
         Password = str(pw.get())
@@ -203,11 +203,11 @@ def loginDark():
 
     ##################################
 
-    img = (Image.open("D:\Project Prokom\imgsrc\kaicnth.png"))
+    img = (Image.open("F:\jjaltok\logo-kereta-api-indonesia-kai.jpg"))
     img_resize = img.resize((440,230), Image.ANTIALIAS)
     new_image2 = ImageTk.PhotoImage(img_resize)
     Label(login, image=new_image2, bg="#333333").place(x=35, y=127)
-
+   
     ##################################
 
     frame = Frame(login, width=350, height=350, bg="#333333")
@@ -222,14 +222,14 @@ def loginDark():
     ##################################
 
     def cekAkun():
-        with open('D:/Project Prokom/data.akun.k21.json', 'r') as file:
+        with open('F:/jjaltok/data.akun.k21.json', 'r') as file:
             data_akun = json.load(file)
         Username = str(user.get())
         Password = str(pw.get())
         for i in range(0, len(data_akun["akun"])):
             if Username == data_akun["akun"][i]["username"] and Password == data_akun["akun"][i]["password"]:    
                 login.destroy()
-                mainPage()
+                mainloop()
                 break
         else:
             messagebox.showerror("Login Gagal", "Username atau password salah!")
